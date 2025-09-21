@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cidoc-crm-toolkit"
+version = "0.1.0"
+description = "Modern, Pydantic-based CIDOC CRM modeling toolkit with graph storage and JSON API"
+authors = [{ name = "CIDOC CRM Toolkit", email = "developers@example.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.23",
+    "typer>=0.9",
+    "networkx>=3.1"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.21",
+    "httpx>=0.27"
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+asyncio_mode = "auto"
+pythonpath = ["src"]
